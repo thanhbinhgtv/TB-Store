@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Segoe UI", sans-serif;
+  --font-display: "Sora", "Segoe UI", sans-serif;
+
+  --color-brand-50: #eef7ff;
+  --color-brand-100: #d8ecff;
+  --color-brand-200: #b8deff;
+  --color-brand-300: #89cbff;
+  --color-brand-400: #54b2ff;
+  --color-brand-500: #1f96ff;
+  --color-brand-600: #0a79dd;
+  --color-brand-700: #0c61b2;
+  --color-brand-800: #10508f;
+  --color-brand-900: #124475;
+
+  --color-surface-50: #f8fafb;
+  --color-surface-100: #edf2f5;
+  --color-surface-200: #d8e1e8;
+  --color-surface-300: #bac9d4;
+  --color-surface-400: #92a8b8;
+  --color-surface-500: #6f879a;
+  --color-surface-600: #546b7d;
+  --color-surface-700: #435767;
+  --color-surface-800: #374754;
+  --color-surface-900: #2c3944;
+  --color-surface-950: #1e272f;
+
+  --radius-card: 1rem;
+  --radius-button: 0.625rem;
+}
+
+/* :root thường là thẻ html, block này áp dụng mặc định và khi data-theme="light" */
+:root,
+:root[data-theme="light"] {
+  /* Báo cho browser ưu tiên giao diện native theo light mode */
+  color-scheme: light;
+
+  --background: var(--color-surface-50);
+  --foreground: var(--color-surface-950);
+
+  --surface-page: var(--color-surface-50);
+  --surface-subtle: var(--color-surface-100);
+  --surface-muted: var(--color-surface-200);
+  --surface-card: #ffffff;
+  --surface-accent: var(--color-brand-100);
+
+  --text-primary: var(--color-surface-950);
+  --text-secondary: var(--color-surface-700);
+  --text-muted: var(--color-surface-600);
+  --text-accent: var(--color-brand-800);
+  --text-on-accent: #ffffff;
+
+  --border-default: var(--color-surface-200);
+  --border-strong: var(--color-surface-300);
+  --focus-ring: var(--color-brand-400);
+
+  --button-primary-bg: var(--color-surface-950);
+  --button-primary-bg-hover: var(--color-surface-900);
+  --error: #dc2626;
+
+  --gradient-card-from: var(--color-brand-100);
+  --gradient-card-to: var(--color-surface-200);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --background: var(--color-surface-950);
+  --foreground: var(--color-surface-50);
+
+  --surface-page: var(--color-surface-950);
+  --surface-subtle: var(--color-surface-900);
+  --surface-muted: var(--color-surface-800);
+  --surface-card: var(--color-surface-900);
+  --surface-accent: color-mix(in srgb, var(--color-brand-700) 42%, var(--color-surface-950));
+
+  --text-primary: var(--color-surface-50);
+  --text-secondary: var(--color-surface-200);
+  --text-muted: var(--color-surface-300);
+  --text-accent: var(--color-brand-300);
+  --text-on-accent: var(--color-surface-50);
+
+  --border-default: var(--color-surface-800);
+  --border-strong: var(--color-surface-700);
+  --focus-ring: var(--color-brand-400);
+
+  --button-primary-bg: var(--color-brand-500);
+  --button-primary-bg-hover: var(--color-brand-600);
+  --error: #f87171;
+
+  --gradient-card-from: color-mix(in srgb, var(--color-brand-700) 40%, var(--color-surface-950));
+  --gradient-card-to: var(--color-surface-800);
+}
+
+@layer base {
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}

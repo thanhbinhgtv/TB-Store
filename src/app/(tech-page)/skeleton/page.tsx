@@ -1,4 +1,4 @@
-import HomePage from "@/features/Skeleton";
+import SkeletonComponent from "@/features/Skeleton";
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 }
 
 const Skeleton = () => {
-  return <HomePage />;
+  return <SkeletonComponent />;
 }
 
 export default Skeleton

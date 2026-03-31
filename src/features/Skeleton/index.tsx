@@ -3,7 +3,7 @@ import type {
   ItemList,
 } from "@/features/Skeleton/types/ItemList.types";
 
-export const HomePage = () => {
+export const SkeletonComponent = () => {
   const featuredProducts: ItemList[] = [
     { name: "Skeleton", feature: "Skeleton" },
     { name: "unkow", feature: "---" },
@@ -14,10 +14,10 @@ export const HomePage = () => {
   ];
 
   return (
-    <main className="min-h-screen text-zinc-900">
+    <main className="min-h-screen bg-[var(--surface-page)] text-[var(--text-primary)]">
       <ItemListComponent items={featuredProducts} />
     </main>
   );
 };
 
-export default HomePage;
+export default SkeletonComponent;
