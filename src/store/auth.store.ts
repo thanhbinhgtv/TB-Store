@@ -39,5 +39,6 @@ export function useAuthStore() {
       return () => listeners.delete(listener);
     },
     () => state,
+    () => state,
   );
 }

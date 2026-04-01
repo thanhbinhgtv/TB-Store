@@ -14,8 +14,7 @@ type SiteHeaderProps = {
 };
 
 export function Header({ navItems }: SiteHeaderProps) {
-  const { theme, toggleTheme } = useTheme();
-  const themeLabel = theme === "dark" ? "Light" : "Dark";
+  const { toggleTheme } = useTheme();
 
   return (
     <header
@@ -33,11 +32,11 @@ export function Header({ navItems }: SiteHeaderProps) {
         <button
           type="button"
           onClick={toggleTheme}
-          suppressHydrationWarning
-          aria-label={`Switch to ${themeLabel} mode`}
-          className="rounded-lg border border-[var(--border-strong)] bg-[var(--surface-card)] px-3 py-2 text-xs font-semibold text-[var(--text-secondary)] transition-colors hover:border-[var(--focus-ring)] hover:text-[var(--text-primary)]"
+          aria-label="Toggle theme"
+          className="min-w-14 rounded-lg border border-[var(--border-strong)] bg-[var(--surface-card)] px-3 py-2 text-center text-xs font-semibold text-[var(--text-secondary)] transition-colors hover:border-[var(--focus-ring)] hover:text-[var(--text-primary)]"
         >
-          {themeLabel}
+          <span className={styles.themeLabelForLight}>Dark</span>
+          <span className={styles.themeLabelForDark}>Light</span>
         </button>
       </div>
     </header>

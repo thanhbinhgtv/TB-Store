@@ -1,3 +1,19 @@
 .headerContainer {
     width: 100%;
 }
+
+.themeLabelForLight {
+    display: inline;
+}
+
+.themeLabelForDark {
+    display: none;
+}
+
+:global(html[data-theme="dark"]) .themeLabelForLight {
+    display: none;
+}
+
+:global(html[data-theme="dark"]) .themeLabelForDark {
+    display: inline;
+}

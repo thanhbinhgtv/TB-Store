@@ -31,8 +31,9 @@
   --radius-button: 0.625rem;
 }
 
-/* :root thường là thẻ html, block này áp dụng mặc định và khi data-theme="light" */
-:root,
+/* root thường là thẻ html, áp dụng ngay khi trang load, kể cả khi chưa có data-theme */
+:root, 
+/* Áp dụng khi data-theme="light" */
 :root[data-theme="light"] {
   /* Báo cho browser ưu tiên giao diện native theo light mode */
   color-scheme: light;
