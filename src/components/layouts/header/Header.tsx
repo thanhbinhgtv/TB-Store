@@ -12,8 +12,9 @@ export function Header() {
     { label: "Skeleton", href: "/skeleton" },
     { label: "Price Board", href: "/price-board" },
     { label: "Tailwind", href: "/tailwind" },
-    { label: "Highcharts", href: "/highcharts" },
     { label: "Trading View", href: "/trading-view" },
+    { label: "Highcharts", href: "/highcharts" },
+    { label: "AG Grid", href: "/ag-grid" },
     { label: "Login", href: "/login" },
   ];
 
