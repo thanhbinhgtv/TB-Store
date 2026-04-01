@@ -14,7 +14,7 @@ export const SkeletonComponent = () => {
   ];
 
   return (
-    <main className="min-h-screen bg-[var(--surface-page)] text-[var(--text-primary)]">
+    <main className="min-h-screen bg-(--surface-page) text-(--text-primary)">
       <ItemListComponent items={featuredProducts} />
     </main>
   );
