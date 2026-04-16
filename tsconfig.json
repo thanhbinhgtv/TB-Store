@@ -22,14 +22,14 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": [ // Include all TypeScript files and declaration files
-    "next-env.d.ts",
-    "**/*.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts",
-    "**/*.mts"
+  "include": [        // Include all TypeScript files and declaration files
+    "next-env.d.ts",  // mọi file khai báo kiểu tự viết trong dự án.
+    "**/*.d.ts",      // tất cả các file có phần mở rộng .d.ts trong dự án.
+    "**/*.ts",        // tất cả các file có phần mở rộng .ts trong dự án.
+    "**/*.tsx",       // tất cả các file có phần mở rộng .tsx trong dự án.
+    ".next/types/**/*.ts",        // tất cả các file có phần mở rộng .ts trong thư mục .next/types, nơi Next.js lưu trữ các loại được tạo tự động.
+    ".next/dev/types/**/*.ts",    // tất cả các file có phần mở rộng .ts trong thư mục .next/dev/types, nơi Next.js lưu trữ các loại được tạo tự động cho môi trường phát triển.
+    "**/*.mts"        // tất cả các file có phần mở rộng .mts trong dự án, thường được sử dụng cho các module ES6.
   ],
   "exclude": ["node_modules"]
 }
