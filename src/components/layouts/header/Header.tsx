@@ -23,7 +23,7 @@ export function Header() {
       className={`${styles.headerContainer} border-y border-(--border-default) bg-(--surface-subtle) text-(--text-primary)`}
     >
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
-        <div className="text-xl font-extrabold text-(--text-accent)">JBSV</div>
+        <div className="text-xl font-extrabold text-(--text-accent)">SBSI</div>
         <nav className="hidden items-center gap-5 text-sm text-(--text-secondary) md:flex">
           {navItems.map((item) => (
             <Link key={item.label} className="transition-colors hover:text-(--text-accent)" href={item.href}>
