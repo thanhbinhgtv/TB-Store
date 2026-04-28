@@ -37,6 +37,7 @@
     return true;
   }
 
+  // hàm mở dropdown Symbol nếu chưa mở
   function openSymbolDropdown() {
     const trigger = document.getElementById("odr-symbol");
     if (!trigger) return false;
@@ -48,12 +49,14 @@
     return true;
   }
 
+  // hàm click radio trong dropdown Symbol dựa trên text hiển thị của option
   function clickSymbolRadioByText(SymbolText) {
     const text = String(SymbolText || "").trim();
     if (!text) return false;
 
     if (!openSymbolDropdown()) return false;
 
+    // tìm tất cả label trong dropdown và tìm label có text chứa SymbolText
     const labels = Array.from(document.querySelectorAll("label"));
     const targetLabel = labels.find((label) =>
       (label.textContent || "").includes(text)
@@ -75,6 +78,7 @@
     return true;
   }
 
+  // hàm mở dropdown Payment Method nếu chưa mở
   function openPaymentMethodDropdown() {
     const trigger = document.getElementById("odr-sett-method");
     if (!trigger) return false;
@@ -95,6 +99,7 @@
     return value;
   }
 
+  // hàm click radio trong dropdown Payment Method dựa trên text hiển thị của option
   function clickPaymentMethodByText(rawPaymentMethod) {
     const text = normalizePaymentMethod(rawPaymentMethod);
     if (!text) return false;
@@ -122,8 +127,9 @@
     return true;
   }
 
+  // hàm mở dropdown Contracust nếu chưa mở
   function openContracustDropdown() {
-    const trigger = document.getElementById("odr-contracust");
+    const trigger = document.getElementById("odr-rev-party");
     if (!trigger) return false;
 
     const panel = trigger.nextElementSibling;
@@ -133,6 +139,7 @@
     return true;
   }
 
+  // hàm click radio trong dropdown Contracust dựa trên value của input radio
   function clickContracustByValue(rawValue) {
     const val = String(rawValue || "").trim();
     if (!val) return false;
@@ -213,8 +220,8 @@
     contraacct = parsed.contraacct || "";
 
     // Validate parsed values: must have at least side and code values
-    if (!tab || !SymbolText) {
-      alert("Định dạng không hợp lệ. Phải dùng: side=BUYI&code=TNF32101&paymentmethod=GN&vol=45&price=14279452&acctbuy=088C030494");
+    if (!tab || !SymbolText || !paymentMethod || !odrOrderQtty || !odrOrderPrice || !acctbuy || !contracust) {
+      alert("Định dạng không hợp lệ. Phải dùng: side=Chiều lệnh&code=Mã giaodịch&paymentmethod=Phương thức thanh toán&vol=Khối lượng &price=Giá&acctbuy=STK đăt lệnh&contracust=Thành viên đối ứng&contraacct=Số TK đối ứng");
       return;
     }
 
@@ -260,7 +267,7 @@
   }
 
   function openPromptAndFill() {
-    const raw = prompt("Typing: side=BUYI&code=TNF32101&paymentmethod=GN&vol=45&price=14279452&acctbuy=088C030494", "");
+    const raw = prompt("Trỏ chuột vào ô nhập liệu và quét QR", "");
     if (!raw) return;
     fillFromRaw(raw);
   }

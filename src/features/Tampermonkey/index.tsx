@@ -281,7 +281,6 @@ const TampermonkeyComp = () => {
                           <label className="flex w-full cursor-pointer items-start gap-2 rounded-lg px-3 py-2 transition-colors hover:bg-(--surface-subtle)">
                             <input
                               type="radio"
-                              name="sampleProfileOption"
                               value={option.id}
                               checked={selectedSampleId === option.id}
                               onChange={() => handleSelectProfile(option)}
@@ -314,7 +313,6 @@ const TampermonkeyComp = () => {
           {/* Price */}
           <div>
             <label
-              htmlFor="odr-order-qtty"
               className="mb-2 block text-sm font-medium"
             >
               Price:
@@ -329,7 +327,6 @@ const TampermonkeyComp = () => {
           {/* Quantity */}
           <div>
             <label
-              htmlFor="odr-order-price"
               className="mb-2 block text-sm font-medium"
             >
               Quantity:
@@ -408,7 +405,6 @@ const TampermonkeyComp = () => {
           {/* Order Send Account */}
           <div>
             <label
-              htmlFor="odr-send-account"
               className="mb-2 block text-sm font-medium"
             >
               STK đặt lệnh:
@@ -425,7 +421,7 @@ const TampermonkeyComp = () => {
             <label className="mb-2 block text-sm font-medium">Thành viên đối ứng</label>
             <div className="relative">
               <button
-                id="odr-contracust"
+                id="odr-rev-party"
                 type="button"
                 aria-haspopup="listbox"
                 aria-expanded={contracustDropdownDisplay === "block"}
@@ -466,7 +462,6 @@ const TampermonkeyComp = () => {
                           <label className="flex w-full cursor-pointer items-start gap-2 rounded-lg px-3 py-2 transition-colors hover:bg-(--surface-subtle)">
                             <input
                               type="radio"
-                              name="contracustOption"
                               value={option.value}
                               checked={contracust === option.value}
                               onChange={() => handleSelectContracust(option)}
@@ -488,7 +483,6 @@ const TampermonkeyComp = () => {
            {/* Order Send Account */}
           <div>
             <label
-              htmlFor="odr-rev-account"
               className="mb-2 block text-sm font-medium"
             >
               STK đối ứng:
